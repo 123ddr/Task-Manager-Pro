@@ -1,12 +1,38 @@
-# React + Vite
+# Task Manager Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple task manager application inspired by Trello, built with **React**, **Ant Design (antd)**, **SCSS**, and **React Router v6**. The app allows users to manage tasks within boards and lists, including adding, editing, moving, and deleting tasks.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Boards List Page (`/boards`)**
+  - Displays hard-coded board cards (e.g., "Personal Tasks," "Team Board").
+  - Each card shows the board name and a short description.
+  - Clicking a board card navigates to the board page.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Single Board Page (`/boards/:id`)**
+  - Displays multiple lists/columns (e.g., "To Do," "In Progress," "Done").
+  - Each list contains task cards.
+  - Users can:
+    - Add new tasks.
+    - Edit task title and description via modal.
+    - Move tasks between lists.
+    - Delete tasks.
+  - Extra Feature: **Task Favorites** (mark tasks as favorites and show favorite count).
+
+- **Routing**
+  - React Router v6 for navigation.
+  - `/boards` → Boards list page.
+  - `/boards/:id` → Single board page.
+
+- **State Management**
+  - `useReducer` manages board state (lists and tasks).
+
+- **API & Data**
+  - Mocked API using a custom hook (`useBoardApi`) for GET, POST, PATCH/PUT, and DELETE operations.
+  - Handles loading and error states.
+
+- **Styling**
+  - SCSS for modular styles.
+  - Ant Design components (`Card`, `Button`, `Modal`, etc.) for consistent UI.
